@@ -1,0 +1,19 @@
+{
+  "name": "DiscordDB_JS",
+  "description": "DiscordDB version for discord.js",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leonllrmc/DiscordDB_JS.git"
+  },
+  "keywords": [],
+  "author": "leonllrmc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonllrmc/DiscordDB_JS/issues"
+  },
+  "homepage": "https://github.com/leonllrmc/DiscordDB_JS"
+}
