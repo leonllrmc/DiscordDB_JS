@@ -1,6 +1,6 @@
 {
   "name": "DiscordDB_JS",
-  "description": "DiscordDB version for discord.js",
+  "description": "DiscordDB_JS (python package) version for discord.js",
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
