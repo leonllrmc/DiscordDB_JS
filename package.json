@@ -12,7 +12,7 @@
   "dependencies": {
     "discord.js": "^12.5.3"
   }, 
-  "publishConfig": { "access": "public", "branches": ["master"] }, 
+  "publishConfig": { "access": "public", "branches": ["main"] }, 
   "main": "src/main.js", 
   "keywords": [],
   "author": "leonllrmc",
