@@ -14,7 +14,7 @@
   }, 
   "publishConfig": { "access": "public", "branches": ["main"] }, 
   "main": "src/main.js",
-  "types": "typings/maind.d.ts",
+  "types": "typings/main.d.ts",
   "keywords": [],
   "author": "leonllrmc",
   "license": "ISC",
