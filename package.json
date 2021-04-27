@@ -1,7 +1,7 @@
 {
-  "name": "DiscordDB_JS",
+  "name": "Discord_db_js",
   "description": "DiscordDB_JS (python package) version for discord.js",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +11,13 @@
   },
   "dependencies": {
     "discord.js": "^12.5.3"
-  }, 
-  "publishConfig": { "access": "public", "branches": ["main"] }, 
+  },
+  "publishConfig": {
+    "access": "public",
+    "branches": [
+      "main"
+    ]
+  },
   "main": "src/main.js",
   "types": "typings/main.d.ts",
   "keywords": [],
