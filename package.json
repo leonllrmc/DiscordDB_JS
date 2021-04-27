@@ -13,7 +13,8 @@
     "discord.js": "^12.5.3"
   }, 
   "publishConfig": { "access": "public", "branches": ["main"] }, 
-  "main": "src/main.js", 
+  "main": "src/main.js",
+  "types": "typings/main.d.ts",
   "keywords": [],
   "author": "leonllrmc",
   "license": "ISC",
