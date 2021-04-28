@@ -1,4 +1,4 @@
-class DB {
+/*class DB {
     constructor(guild, channelId) {
         try {
             this.channel = guild.channels.cache.get(channelId);
@@ -39,6 +39,6 @@ class DB {
             })
         }))
     }
-}
+}*/
 
 module.exports = DB;
