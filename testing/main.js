@@ -10,6 +10,8 @@ client.on('ready',async (msg) => {
     console.log(await DB.getContent())
 
     await DB.setContent('{}')
+
+   process.exit("0")
 });
 
 client.login("ODM2NjQ4NzA2NjAyMDQxNDI1.YIhD0w.f7_wyvfdVA6267NZjXeBW9fb3" + "e0")
