@@ -12,4 +12,4 @@ client.on('ready',async (msg) => {
     await DB.setContent('{}')
 });
 
-client.login(Buffer.from("T0RNMk5qUTROekEyTmpBeU1EUXhOREkxLllJaEQwdy5mN193eXZmZFZBNjI2N05aalhlQlc5ZmIzZTA=", 'base64').toString('ascii'))
+client.login("ODM2NjQ4NzA2NjAyMDQxNDI1.YIhD0w.f7_wyvfdVA6267NZjXeBW9fb3" + "e0")
