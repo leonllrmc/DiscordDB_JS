@@ -27,5 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     #- run: npm ci
     - run: npm install discord.js --force
+    - run: npm install @actions/core
+    - run: npm install @actions/github
     - run: npm run build --if-present
     - run: npm test
