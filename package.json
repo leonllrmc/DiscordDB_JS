@@ -1,7 +1,7 @@
 {
   "name": "Discord_db_js",
   "description": "DiscordDB_JS (python package) version for discord.js",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "scripts": {
     "test": "node testing/main.js"
   },
