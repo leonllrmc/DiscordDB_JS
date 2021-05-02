@@ -2,7 +2,7 @@ class Discord_DB {
     constructor(channel, client) {
         try {
             if(typeof channel === 'string') {
-                let channelFetched = client.channels.get(channel);
+                let channelFetched = client.channels.cache.get(channel);
                 if (!channel) throw new Error("Error While getting channel...");
                 this.channel = channelFetched;
             }else {
@@ -48,7 +48,7 @@ class Discord_DB {
 class MsgDiscord_DB {
     constructor(message, channel, client) {
         if(typeof channel === 'string') {
-            let channelFetched = client.channels.get(channel);
+            let channelFetched = client.channels.cache.get(channel);
             if (!channel) throw new Error("Error While getting channel...");
             this.channel = channelFetched;
         }else {
