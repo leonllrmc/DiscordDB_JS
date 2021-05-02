@@ -56,12 +56,9 @@ class MsgDiscord_DB {
         }
         if(typeof message === 'string') {
             try {
-                var msg;
-                this.channel.messages.fetch("701574160211771462").then((fetchedMsg) => {
-                    msg = fetchedMsg;
-                })
-                if(!msg) throw new Error('error while getting message');
-                this.msg = msg;
+                    var msg = this.channel.messages.cache.get(message);
+                    if(!msg) throw new Error('error while getting message');
+                    this.msg = msg;
             }catch(e) {
                 throw e;
             }
