@@ -1,8 +1,13 @@
-class DB {
-    constructor(guild, channelId) {
+class Discord_DB {
+    constructor(channel, client) {
         try {
-            this.channel = guild.channels.cache.get(channelId);
-            if (!this.channel) throw new Error("Error While getting channel...");
+            if(typeof channel === 'string') {
+                let channelFetched = client.channels.get(channel);
+                if (!channel) throw new Error("Error While getting channel...");
+                this.channel = channelFetched;
+            }else {
+                this.channel = channel;
+            }
         }catch(e) {
             throw e;
         }
@@ -32,8 +37,7 @@ class DB {
                 throw new Error(`Invalid content (must be JSON string or object not ${typeof newContent})`);
             }
             this.channel.messages.fetch().then((msgs) => {
-                msgs.first().edit(newContentParsed);
-                resolve();
+                resolve(msgs.first().edit(newContentParsed));
             }).catch((err) => {
                 reject(err);
             })
@@ -41,4 +45,55 @@ class DB {
     }
 }
 
-module.exports = DB;
+class MsgDiscord_DB {
+    constructor(message, channel, client) {
+        if(typeof channel === 'string') {
+            let channelFetched = client.channels.get(channel);
+            if (!channel) throw new Error("Error While getting channel...");
+            this.channel = channelFetched;
+        }else {
+            this.channel = channel;
+        }
+        if(typeof message === 'string') {
+            try {
+                var msg;
+                this.channel.messages.fetch("701574160211771462").then((fetchedMsg) => {
+                    msg = fetchedMsg;
+                })
+                if(!msg) throw new Error('error while getting message');
+                this.msg = msg;
+            }catch(e) {
+                throw e;
+            }
+        }else {
+            this.msg = message;
+        }
+    }
+
+    getContent() {
+        return new Promise(((resolve, reject) => {
+            try {
+                resolve(this.msg.content);
+            }catch (e) {
+                reject(e);
+            }
+        }))
+    }
+
+    setContent(newContent) {
+        return new Promise(((resolve, reject) => {
+            try {
+                if(typeof newContent === 'string') {
+                    resolve(this.msg.edit(newContent));
+                }else {
+                    resolve(this.msg.edit(JSON.stringify(newContent)));
+                }
+            }catch (e) {
+                reject(e);
+            }
+        }))
+    }
+}
+
+exports.Discord_DB = Discord_DB;
+exports.Discord_DB_fromMessage = MsgDiscord_DB;
