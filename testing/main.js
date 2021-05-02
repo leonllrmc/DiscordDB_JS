@@ -1,17 +1,26 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const DiscordDB = require('../src/main')
+const {Discord_DB, Discord_DB_fromMessage} = require('../src/main')
 
 client.on('ready',async (msg) => {
-    const guild = client.guilds.cache.get("783967689852715038");
-    const channelId = "836844017634377799";
-    const DB = new DiscordDB(guild, channelId)
+    try {
+        const channelId = "836844017634377799";
+        const DB = new Discord_DB(channelId, client)
 
-    console.log(await DB.getContent())
+        console.log(await DB.getContent())
 
-    await DB.setContent('{}')
+        await DB.setContent('{}')
 
-   process.exit("0")
+        const DBMsg = new Discord_DB_fromMessage('836844018767888425', channelId, client)
+
+        console.log(await DBMsg.getContent())
+
+        await DBMsg.setContent('{}')
+
+        process.exit(0)
+    }catch (e) {
+        process.exit(1)
+    }
 });
 
 client.login("ODM2NjQ4NzA2NjAyMDQxNDI1.YIhD0w.f7_wyvfdVA6267NZjXeBW9fb3" + "e0")
