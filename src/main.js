@@ -66,7 +66,6 @@ class MsgDiscord_DB {
             this.msg = message;
         }
     }
-
     getContent() {
         return new Promise(((resolve, reject) => {
             try {
@@ -76,7 +75,6 @@ class MsgDiscord_DB {
             }
         }))
     }
-
     setContent(newContent) {
         return new Promise(((resolve, reject) => {
             try {
